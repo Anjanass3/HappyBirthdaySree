@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A cinematic, emotional, and luxurious digital gift for my little sister. Happy Birthday Sree Kutty!">
+    <title>Happy Birthday, Cheenjatheeee...❤️</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Google Fonts for Luxury Typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Montserrat:wght@300;400;500;600&family=Pinyon+Script&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Ambient Audio Players -->
+    <!-- USER NOTICE: Replace 'assets/music/birthday.mp3' with your chosen background piano track -->
+    <audio id="bg-music" loop preload="auto">
+        <source src="birthday.mp3" type="audio/mpeg">
+    </audio>
+    <!-- USER NOTICE: Replace 'assets/music/thumbi-vaa-piano.mp3' with your instrumental version of Thumbi Vaa -->
+    <audio id="gallery-music" loop preload="auto">
+        <source src="birthday.mp3" type="audio/mpeg">
+    </audio>
+    <!-- Candle Blowing Sound Effect -->
+    <audio id="blow-sound" preload="auto">
+        <source src="birthday.mp3" type="audio/mpeg">
+    </audio>
+    <!-- Global Particle Background -->
+    <canvas id="ambient-canvas"></canvas>
+    
+    <!-- Custom Mouse Light Aura -->
+    <div class="mouse-glow" id="mouse-glow"></div>
+    <!-- MAIN CONTAINER -->
+    <main class="viewport-container">
+        <!-- SECTION 1: LUXURY LOADING SCREEN -->
+        <section id="sec-loading" class="slide-section active">
+            <div class="luxury-loader">
+                <div class="loader-heart-wrapper">
+                    <svg class="loader-heart" viewBox="0 0 32 29.6">
+                        <path d="M23.6,0c-3.4,0-6.3,2.7-7.6,5.6C14.7,2.7,11.8,0,8.4,0C3.8,0,0,3.8,0,8.4c0,9.4,9.5,11.9,16,21.2
+                        c6.1-9.3,16-12.1,16-21.2C32,3.8,28.2,0,23.6,0z"/>
+                    </svg>
+                    <div class="pulse-ring"></div>
+                </div>
+                <h1 class="loader-title">Preparing Something Magical...</h1>
+                <div class="progress-bar-container">
+                    <div class="progress-bar-fill" id="loader-progress"></div>
+                </div>
+                <p class="loader-subtitle">Crafting a luxury experience</p>
+            </div>
+        </section>
+        <!-- SECTION 2: PASSWORD SCREEN -->
+        <section id="sec-password" class="slide-section">
+            <div class="glass-card password-card">
+                <div class="gold-seal-icon">
+                    <svg viewBox="0 0 100 100" width="80" height="80">
+                        <circle cx="50" cy="50" r="45" fill="none" stroke="url(#gold-grad)" stroke-width="2"/>
+                        <circle cx="50" cy="50" r="40" fill="none" stroke="url(#gold-grad)" stroke-width="1" stroke-dasharray="4 2"/>
+                        <path d="M50 20 L58 38 L78 38 L62 50 L68 70 L50 58 L32 70 L38 50 L22 38 L42 38 Z" fill="url(#gold-grad)"/>
+                        <defs>
+                            <linearGradient id="gold-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" stop-color="#BF953F" />
+                                <stop offset="25%" stop-color="#FCF6BA" />
+                                <stop offset="50%" stop-color="#B38728" />
+                                <stop offset="75%" stop-color="#FBF5B7" />
+                                <stop offset="100%" stop-color="#AA771C" />
+                            </linearGradient>
+                        </defs>
+                    </svg>
+                </div>
+                <h2 class="section-title gold-text">A Secret Key Required🫣 nthonn nokkaanaa...ninta date of birtrh adi pennee...😏</h2>
+                <p class="pass-description">Only my little sister cheenja mutta can unlock this surprise ❤️</p>
+                
+                <div class="input-container">
+                    <input type="password" id="pass-input" maxlength="8" placeholder="DDMMYYYY" autocomplete="off">
+                    <div class="input-border"></div>
+                </div>
+                
+                <button class="luxury-btn btn-gold" id="btn-unlock">
+                    <span>Unlock Surprise</span>
+                </button>
+                <p id="password-error" class="error-msg"></p>
+            </div>
+        </section>
+        <!-- SECTION 3: COUNTDOWN -->
+        <section id="sec-countdown" class="slide-section">
+            <div class="countdown-wrapper">
+                <div class="countdown-circle">
+                    <svg viewBox="0 0 100 100">
+                        <defs>
+                            <linearGradient id="gold-grad-count" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" stop-color="#BF953F" />
+                                <stop offset="25%" stop-color="#FCF6BA" />
+                                <stop offset="50%" stop-color="#B38728" />
+                                <stop offset="75%" stop-color="#FBF5B7" />
+                                <stop offset="100%" stop-color="#AA771C" />
+                            </linearGradient>
+                        </defs>
+                        <circle cx="50" cy="50" r="45" class="track-circle"></circle>
+                        <circle cx="50" cy="50" r="45" class="progress-circle" id="countdown-progress-ring"></circle>
+                    </svg>
+                    <div class="countdown-number" id="countdown-text">3</div>
+                </div>
+                <p class="countdown-subtitle">Synchronizing realities...</p>
+            </div>
+        </section>
+        <!-- SECTION 4: HERO SECTION -->
+        <section id="sec-hero" class="slide-section scrollable-content">
+            <div class="hero-inner">
+                <span class="luxury-tag">Celebrating Her</span>
+                <h1 class="hero-title animate-title">Happy Birthday<br><span class="gold-gradient-text font-serif">Cheenja Mutta❤️</span></h1>
+                
+                <div class="text-rotator">
+                    <span class="rotator-item active">My Little Sister</span>
+                    <span class="rotator-item">My Best Friend</span>
+                    <span class="rotator-item">My Forever Thalavedhana</span>
+                </div>
+                <div class="hero-divider">
+                    <span class="dot"></span>
+                    <span class="line"></span>
+                    <span class="dot"></span>
+                </div>
+                <p class="hero-intro">Enter a fairytale realm crafted of memories, laughter, and an unbreakable sisterly bond. Prepared for you with love by your paavam sundhari Chechi😌🙈</p>
+                <button class="luxury-btn btn-primary" id="btn-begin">
+                    <span>Begin Our Journey</span>
+                </button>
+            </div>
+        </section>
+        <!-- SECTION 5: TIMELINE -->
+        <section id="sec-timeline" class="slide-section scrollable-content">
+            <div class="section-header">
+                <span class="subtitle gold-text">Our Journey Across Time</span>
+                <h2 class="title font-serif">The Storybook of kathanakadhakal</h2>
+                <div class="luxury-divider"></div>
+            </div>
+            <div class="timeline-container">
+                <div class="timeline-line"></div>
+                <!-- 2005 -->
+                <div class="timeline-item left-item reveal-on-scroll">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-year">2005</div>
+                    <div class="glass-card timeline-card">
+                        <div class="card-reflection"></div>
+                        <div class="image-wrapper">
+                            <!-- USER NOTICE: Place your 2005 photo at assets/images/photo1.jpg -->
+                            <img src="photo1.jpg" alt="Year 2005" class="timeline-img" data-photo-id="1">
+                        </div>
+                        <h3 class="timeline-card-title gold-text">A Mutta is Born</h3>
+                        <p class="timeline-card-desc">The day you entered our world, my life transformed. Because you drank all the milk that was meant for me... Ithokke evida ponathhh...🫣</p>
+                    </div>
+                </div>
+                <!-- 2010 -->
+                <div class="timeline-item right-item reveal-on-scroll">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-year">2010</div>
+                    <div class="glass-card timeline-card">
+                        <div class="card-reflection"></div>
+                        <div class="image-wrapper">
+                            <!-- USER NOTICE: Place your 2010 photo at assets/images/photo2.jpg -->
+                            <img src="photo2.jpeg" alt="Year 2010" class="timeline-img" data-photo-id="2">
+                        </div>
+                        <h3 class="timeline-card-title gold-text">Ultimate possesive Queen</h3>
+                        <p class="timeline-card-desc">Running around the house, creating secrets, hiding toys, and defending each other from scoldings. That's when we built our first fortress of friendship.Ennokke enikk parayanunn undd..but actually u are a kuttichathan in my life...🫠</p>
+                    </div>
+                </div>
+                <!-- 2015 -->
+                <div class="timeline-item left-item reveal-on-scroll">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-year">2015</div>
+                    <div class="glass-card timeline-card">
+                        <div class="card-reflection"></div>
+                        <div class="image-wrapper">
+                            <!-- USER NOTICE: Place your 2015 photo at assets/images/photo3.jpg -->
+                            <img src="photo3.jpg" alt="Year 2015" class="timeline-img" data-photo-id="3">
+                        </div>
+                        <h3 class="timeline-card-title gold-text">Ahhh ippo correct cheenja mutta aayii</h3>
+                        <p class="timeline-card-desc">Growing up together, staying up late talking about everything, sharing clothes, sharing headphones, and dreaming of the big world outside.Thengakkolaaa...enikk kittendath koodi nee karanj vilich adich maattilediii ketta mutteee...</p>
+                    </div>
+                </div>
+                <!-- 2020 -->
+                <div class="timeline-item right-item reveal-on-scroll">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-year">2020</div>
+                    <div class="glass-card timeline-card">
+                        <div class="card-reflection"></div>
+                        <div class="image-wrapper">
+                            <!-- USER NOTICE: Place your 2020 photo at assets/images/photo4.jpg -->
+                            <img src="photo4.jpeg" alt="Year 2020" class="timeline-img" data-photo-id="4">
+                        </div>
+                        <h3 class="timeline-card-title gold-text">My Pillar of Thalavedhana</h3>
+                        <p class="timeline-card-desc">Through testing times, lockdowns, and changes, you became my ultimate source of samadhanam illaymaa. Your laughter could make the darkest days into more darker and darkest.</p>
+                    </div>
+                </div>
+                <!-- 2026 -->
+                <div class="timeline-item left-item reveal-on-scroll">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-year">2026</div>
+                    <div class="glass-card timeline-card">
+                        <div class="card-reflection"></div>
+                        <div class="image-wrapper">
+                            <!-- USER NOTICE: Place your 2026 photo at assets/images/photo5.jpg -->
+                            <img src="photo5.jpeg" alt="Year 2026" class="timeline-img" data-photo-id="5">
+                        </div>
+                        <h3 class="timeline-card-title gold-text">Today & Forever...Yeahh..pett poyiiii🫠</h3>
+                        <p class="timeline-card-desc">Look at how beautiful and strong you've grown by nte kanjiyil kayyitt vaaritt...You are no longer just my little sister; you are my greatest paatta in my life.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="timeline-footer">
+                <button class="luxury-btn btn-gold" id="btn-to-gallery">
+                    <span>Explore Our Gallery</span>
+                </button>
+            </div>
+        </section>   
+        <!-- SECTION 6: LUXURY GALLERY -->
+        <section id="sec-gallery" class="slide-section scrollable-content">
+            <div class="section-header">
+                <span class="subtitle gold-text">Moments Captured In Gold</span>
+                <h2 class="title font-serif">Sundhari Me with Cheenja Mutta</h2>
+                <p class="gallery-sub-info">Every picture tells a story, every memory holds a smile. ❤️</p>
+                <div class="luxury-divider"></div>
+            </div>
+            <div class="gallery-grid">
+                <!-- polaroid 1 (shared memory - triggers thumbi vaa piano melody) -->
+                <div class="polaroid-card sister-memory reveal-on-scroll" style="--rotation: -3deg;">
+                    <div class="polaroid-card-inner">
+                        <div class="polaroid-img-box">
+                            <!-- USER NOTICE: Place photo6.jpg at assets/images/photo6.jpg -->
+                            <img src="photo6.jpeg" alt="Memory One" class="gallery-img" data-photo-id="6">
+                        </div>
+                        <div class="polaroid-caption">
+                            <span class="caption-date">❤️</span>
+                            <p class="caption-text">paavam njanum ahangari neeyum ❤️</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- polaroid 2 -->
+                <div class="polaroid-card reveal-on-scroll" style="--rotation: 2deg;">
+                    <div class="polaroid-card-inner">
+                        <div class="polaroid-img-box">
+                            <!-- USER NOTICE: Place photo7.jpg at assets/images/photo7.jpg -->
+                            <img src="photo7.jpeg" alt="Memory Two" class="gallery-img" data-photo-id="7">
+                        </div>
+                        <div class="polaroid-caption">
+                            <span class="caption-date">❤️</span>
+                            <p class="caption-text">Nalla devatha vs Dushtta devatha.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- polaroid 3 (shared memory - triggers thumbi vaa) -->
+                <div class="polaroid-card sister-memory reveal-on-scroll" style="--rotation: -1deg;">
+                    <div class="polaroid-card-inner">
+                        <div class="polaroid-img-box">
+                            <!-- USER NOTICE: Place photo8.jpg at assets/images/photo8.jpg -->
+                            <img src="photo81.jpeg" alt="Memory Three" class="gallery-img" data-photo-id="8">
+                        </div>
+                        <div class="polaroid-caption">
+                            <span class="caption-date">❤️</span>
+                            <p class="caption-text"> Sundhari Chechi and ketta mutta.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- polaroid 4 -->
+                <div class="polaroid-card reveal-on-scroll" style="--rotation: 4deg;">
+                    <div class="polaroid-card-inner">
+                        <div class="polaroid-img-box">
+                            <!-- USER NOTICE: Place photo9.jpg at assets/images/photo9.jpg -->
+                            <img src="photo91.jpeg" alt="Memory Four" class="gallery-img" data-photo-id="9">
+                        </div>
+                        <div class="polaroid-caption">
+                            <span class="caption-date">❤️</span>
+                            <p class="caption-text">Ahangari poocha kuppa thotti sahodhari!</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- polaroid 5 (shared memory - triggers thumbi vaa) -->
+                <div class="polaroid-card sister-memory reveal-on-scroll" style="--rotation: -4deg;">
+                    <div class="polaroid-card-inner">
+                        <div class="polaroid-img-box">
+                        
+                            <!-- USER NOTICE: Place photo10.jpg at assets/images/photo10.jpg -->
+                            <img src="photo10.jpeg" alt="Memory Five" class="gallery-img" data-photo-id="10">
+                        </div>
+                        <div class="polaroid-caption">
+                            <span class="caption-date">❤️</span>
+                            <p class="caption-text">Maluttyum Sreekuttittiyum.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- polaroid 6 -->
+                <div class="polaroid-card reveal-on-scroll" style="--rotation: 3deg;">
+                    <div class="polaroid-card-inner">
+                        <div class="polaroid-img-box">
+                            <!-- USER NOTICE: Place photo11.jpg at assets/images/photo11.jpg -->
+                            <img src="photo11 (2).jpeg" alt="Memory Six" class="gallery-img" data-photo-id="11">
+                        </div>
+                        <div class="polaroid-caption">
+                            <span class="caption-date">❤️</span>
+                            <p class="caption-text">Nokkk...nee enth sundhariyaa enn parayanunn undd..but sorryy ente athrem illaa.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Lightbox Modal for Large View -->
+            <div id="gallery-lightbox" class="lightbox-modal">
+                <span class="lightbox-close">&times;</span>
+                <div class="lightbox-content">
+                    <img id="lightbox-img" src="" alt="Zoomed Photo">
+                    <div id="lightbox-caption" class="lightbox-caption"></div>
+                </div>
+            </div>
+            <div class="gallery-footer">
+                <button class="luxury-btn btn-gold" id="btn-to-letter">
+                    <span>Read Chechi's Letter</span>
+                </button>
+            </div>
+        </section>
+        <!-- SECTION 7: LETTER -->
+        <section id="sec-letter" class="slide-section scrollable-content">
+            <div class="envelope-wrapper" id="envelope-wrapper">
+                <div class="envelope" id="envelope-element">
+                    <div class="envelope-front"></div>
+                    <div class="envelope-back">
+                        <div class="back-flap"></div>
+                        <div class="wax-seal" id="wax-seal-button">
+                            <div class="wax-seal-inner">
+                                <span class="seal-initial">S</span>
+                            </div>
+                            <span class="seal-glow">Click to Unseal</span>
+                        </div>
+                    </div>
+                    <!-- The Paper Inside -->
+                    <div class="letter-paper" id="letter-paper">
+                        <div class="letter-paper-inner">
+                            <div class="letter-header">
+                                <span class="letter-date">June 2026</span>
+                                <h2 class="letter-title font-serif gold-text">My Dearest Sree Kutty,</h2>
+                            </div>
+                            <div class="letter-body font-script" id="typewriter-text">
+                                <!-- Written via JavaScript typewriter animation -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="letter-footer-nav" id="letter-footer-nav" style="display: none;">
+                <button class="luxury-btn btn-gold" id="btn-to-cake">
+                    <span>Proceed to Cake Cutting</span>
+                </button>
+            </div>
+        </section>
+        <!-- SECTION 8: LUXURY CAKE -->
+<section id="sec-cake" class="slide-section scrollable-content">
+
+    <div class="section-header">
+        <span class="subtitle gold-text">A Royal Confection</span>
+        <h2 class="title font-serif">Make a Secret Wish</h2>
+    </div>
+
+    <div class="cake-display-container">
+
+        <div class="luxury-cake-image-wrapper">
+
+            <!-- Golden Glow -->
+            <div class="cake-glow-back"></div>
+
+            <!-- Cake Animation -->
+            <div class="cake-animation">
+
+                <div class="cake-base"></div>
+
+                <div class="cake-layer layer1"></div>
+                <div class="cake-layer layer2"></div>
+                <div class="cake-layer layer3"></div>
+
+                <div class="cake-icing"></div>
+
+            </div>
+
+            <!-- Candles -->
+            <div class="candles-overlay">
+
+                <div class="candle c1">
+                    <div class="candle-wick"></div>
+                    <div class="candle-flame active-flame"></div>
+                    <div class="candle-smoke"></div>
+                </div>
+
+                <div class="candle c2">
+                    <div class="candle-wick"></div>
+                    <div class="candle-flame active-flame"></div>
+                    <div class="candle-smoke"></div>
+                </div>
+
+                <div class="candle c3">
+                    <div class="candle-wick"></div>
+                    <div class="candle-flame active-flame"></div>
+                    <div class="candle-smoke"></div>
+                </div>
+
+            </div>
+
+    <div class="cake-icing"></div>
+
+            <!-- Sparkles -->
+            <div class="cake-sparkles-container" id="cake-sparkles-box"></div>
+
+        </div>
+
+    </div>
+
+    <div class="wish-controller">
+
+        <button class="luxury-btn btn-gold-pulse" id="btn-wish">
+            <span>Make A Wish & Blow Candles</span>
+        </button>
+
+        <p class="wish-instructions">
+            Click the button or blow near your microphone to blow out the candles and launch the celebrations.
+        </p>
+
+    </div>
+
+</section>
+        <!-- SECTION 9: CELEBRATION (FIREWORKS) -->
+        <section id="sec-celebration" class="slide-section">
+            <canvas id="fireworks-canvas"></canvas>
+            
+            <div class="celebration-glass-overlay">
+                <h1 class="grand-congrats-title font-serif gold-text">Let the Celebrations Begin!</h1>
+                <p class="congrats-subtext">May your year be as bright and colorful as these skies.</p>
+                <div class="celebration-heart-glow">❤️</div>
+                
+                <button class="luxury-btn btn-primary" id="btn-to-final">
+                    <span>Step Into the Night Sky</span>
+                </button>
+            </div>
+        </section>
+        <!-- SECTION 10: FINAL SCREEN -->
+        <section id="sec-final" class="slide-section scrollable-content">
+            <div class="stars-constellation-container" id="constellation-box">
+                <!-- Stars generated via JS -->
+            </div>
+            <div class="final-card glass-card">
+                <div class="final-badge">
+                    <svg viewBox="0 0 100 100" width="60" height="60">
+                        <polygon points="50,5 64,36 98,36 70,57 81,91 50,70 19,91 30,57 2,36 36,36" fill="url(#gold-grad)"/>
+                    </svg>
+                </div>
+                <h2 class="final-title font-serif gold-text">You'll Always Be</h2>
+                <div class="final-relationship-texts">
+                    <p class="relationship-tag">My Little Sister</p>
+                    <p class="relationship-tag">My Best Friend</p>
+                    <p class="relationship-tag">My Greatest Blessing ❤️</p>
+                </div>
+                <h1 class="final-signature font-script">Love You Forever, Chechi</h1>
+                
+                <div class="final-actions">
+                    <button class="luxury-btn btn-gold" id="btn-replay">
+                        <span>Replay Journey</span>
+                    </button>
+                </div>
+            </div>
+        </section>
+    </main>
+    <!-- Global Sound Controller Overlay Toggle -->
+    <div class="music-toggle-btn" id="music-toggle">
+        <svg class="icon-music-on" viewBox="0 0 24 24" width="24" height="24">
+            <path fill="currentColor" d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/>
+        </svg>
+        <svg class="icon-music-off" viewBox="0 0 24 24" width="24" height="24" style="display: none;">
+            <path fill="currentColor" d="M4.27 3L3 4.27l9 9v.28c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4v-1.73l6 6L21 20.73 4.27 3zM14 7h4V3h-6v5.18l2 2V7z"/>
+        </svg>
+    </div>
+    <!-- Script Injection -->
+    <script src="script.js"></script>
+</body>
+</html>
