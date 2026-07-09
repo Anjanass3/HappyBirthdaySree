@@ -1656,3 +1656,31 @@ transform:translate(-50%,-70px) scale(.2);
         left: -4px;
     }
 }
+/* Existing CSS */
+
+.final-actions{
+    margin-top:3rem;
+}
+
+/* 👇 Ithinte thazhe paste cheyyu */
+
+@media (max-width:768px){
+
+    .cake-animation{
+        transform:scale(.75);
+    }
+
+    .candles-overlay{
+        top:55px;
+        gap:15px;
+    }
+
+    .letter-paper{
+        padding:20px;
+    }
+
+    .envelope.open .letter-paper{
+        transform:translateY(-35%) rotateY(180deg);
+    }
+
+}
