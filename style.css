@@ -1684,3 +1684,69 @@ transform:translate(-50%,-70px) scale(.2);
     }
 
 }
+/* ===========================
+   MOBILE RESPONSIVE CAKE
+=========================== */
+
+@media (max-width:768px){
+
+.cake-animation{
+    transform:scale(.8);
+}
+
+.candles-overlay{
+    bottom:150px !important;
+    gap:16px;
+}
+
+.candle{
+    height:55px;
+    width:8px;
+}
+
+.candle-flame{
+    width:13px;
+    height:22px;
+}
+
+}
+/* ===========================
+   MOBILE LETTER
+=========================== */
+
+@media (max-width:768px){
+
+:root{
+    --envelope-w:95vw;
+    --envelope-h:260px;
+}
+
+.envelope-wrapper{
+    width:95vw;
+    height:260px;
+}
+
+.letter-paper{
+    padding:18px;
+    font-size:15px;
+    line-height:1.8;
+}
+
+.letter-header{
+    margin-bottom:15px;
+}
+
+.letter-title{
+    font-size:22px;
+}
+
+.letter-date{
+    margin-bottom:10px;
+}
+
+.envelope.open .letter-paper{
+    transform:translateY(-45%) rotateY(180deg);
+    height:420px;
+}
+
+}
