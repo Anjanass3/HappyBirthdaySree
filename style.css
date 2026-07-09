@@ -1195,13 +1195,13 @@ transform:translate(-50%,-50%) scale(1.1);
 =========================== */
 
 .candles-overlay{
-    position:absolute;
+   position:absolute;
     left:50%;
-    bottom:180px;   /* 185-205px vare adjust cheyth nokkaam */
+    bottom:185px;   /* cake top-il varaan */
     transform:translateX(-50%);
     display:flex;
-    gap:20px;
-    z-index:50;
+    gap:28px;
+    z-index:100;
     pointer-events:none;
 
 }
@@ -1690,24 +1690,16 @@ transform:translate(-50%,-70px) scale(.2);
 
 @media (max-width:768px){
 
-.cake-animation{
-    transform:scale(.8);
-}
+    .cake-animation{
+        transform:scale(.8);
+    }
 
-.candles-overlay{
-    bottom:150px !important;
-    gap:16px;
-}
-
-.candle{
-    height:55px;
-    width:8px;
-}
-
-.candle-flame{
-    width:13px;
-    height:22px;
-}
+    .candles-overlay{
+        left:50%;
+        bottom:150px;   /* 145-165px vare adjust cheyth nokku */
+        transform:translateX(-50%);
+        gap:18px;
+    }
 
 }
 /* ===========================
